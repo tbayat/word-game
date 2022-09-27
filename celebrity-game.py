@@ -21,7 +21,7 @@ def take_words_list(number_of_group):
     return words_list
 
 
-def game_round(actual_word, round_number, group_name, new_list):
+def game_turn(actual_word, round_number, group_name, new_list):
     guess = take_guess(round_number, group_name)
 
     won = False
@@ -58,7 +58,7 @@ def word_game(number_of_group):
 
                 print(new_list)
                 actual_word =getpass.getpass(prompt = f"representative of group {group} please enter one word from the list and describe the word to your group:")
-                value , new_list = game_round(actual_word, round, group,new_list)
+                value , new_list = game_turn(actual_word, round, group,new_list)
                 results[group].append(value)
                 number_of_true=results[group].count(True)
                 groups_win[group]=number_of_true
